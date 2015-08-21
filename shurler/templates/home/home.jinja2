@@ -1,0 +1,25 @@
+{% extends "/home/base.jinja2" %}
+{% block content %}
+    <div id="center-box">
+        <div id="center-left-box">
+            <div id="shortener-url-box">
+                {% if c.g.riak_storage: %}
+                {{ h.secure_form(url(controller='redir', action='riak_submit'), method='POST', id='shorten_form') }}
+                {% else: %}
+                {{ h.secure_form(url(controller='redir', action='submit'), method='POST', id='shorten_form') }}
+                {% endif %}
+                    Insert the URL: {{ h.text('short', '', 'short', size='55') }}
+                    {{ h.submit('submit', 'Submit') }}
+                {{ h.end_form() }}
+            </div>
+            <div id="user-urls">
+            </div>
+        </div>
+        <div id="center-right-box">
+            <div id="qrcode">
+            </div>
+            <div id="qrcode-bottom">
+            </div>
+        </div>
+    </div>
+{% endblock %}

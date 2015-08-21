@@ -1,0 +1,3 @@
+include shurler/config/deployment.ini_tmpl
+recursive-include shurler/public *
+recursive-include shurler/templates *

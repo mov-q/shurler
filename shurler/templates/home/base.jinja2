@@ -1,0 +1,11 @@
+{% extends "base.jinja2" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+{{ super() }}
+    {{ h.javascript_link('/js/jquery.form.js') }}
+    {{ h.javascript_link('/js/jquery.validate.min.js') }}
+    {{ h.javascript_link('/js/additional-methods.min.js') }}
+    {{ h.javascript_link('/js/shortener_form.js') }}
+{% endblock %}
+{% block content %}
+{% endblock %}
